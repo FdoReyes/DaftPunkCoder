@@ -1,0 +1,801 @@
+@import 'reset';
+@import 'mixins';
+
+//Map Colores
+$palette:(
+    'color1':  #0D8573,
+    'color2':  #E84343,
+    'color3':  cadetblue,
+    'color4':  red,
+    'color5':  white,
+    'color6':  #b40101,
+    'color7':  cornflowerblue,
+    'color8':   #ccc,
+    'bgcolor':   black,
+    'bgcolor2':  #3D0000,
+    'bgcolor3':  rgb(90, 89, 89),
+    );
+
+//Inicio sitio
+body{
+    @include cuerpo;
+}
+
+.logo {
+    width: 100px;
+    margin-left: 10px;
+}
+
+/* Inicio Cabecera Sass*/
+
+header {
+ @include header;
+}
+
+/* Fin Cabecera Sass*/
+
+
+/* Menu Navegación Sass*/
+
+.nav-links {
+    list-style: none;
+    margin-right: 10px;
+
+    li {
+        display: inline-block;
+    
+        & a {
+            text-decoration: none;
+            color: map-get($palette , color5);
+            margin-left: 15px;
+            font-size: 20px;
+        }
+
+        & a:hover{
+            color: map-get($palette , color4);
+        }
+    }
+}
+
+.navbar {
+    background-color: #3D0000;
+}
+
+/* Fin Menu Navegación Sass*/
+
+
+/* Index Inicio */
+
+/* Css grid Inicio Sass*/
+.grid {
+    display: grid;
+    margin: 30px 80px;
+    grid-template: 
+    'content1 content2'
+    'content3 content3';
+}
+
+.content1 video{
+    grid-area: content1;
+    box-shadow: 0 0 15px 0 map-get($palette , color1);
+    
+
+    &:hover{
+        @include animate;
+        box-shadow: 0 0 15px 0 map-get($palette , color2);
+    }
+}
+
+.content2 img{
+    grid-area: content2;
+    box-shadow: 0 0 15px 0 map-get($palette , color1);
+    height: 480px;
+
+    &:hover {
+        @include animate;
+        box-shadow: 0 0 15px 0 map-get($palette , color2);
+    }
+}
+
+.content3 {
+    grid-area: content3;
+    text-align: center;
+    margin: 20px 0px 0px 20px;
+
+    .daft-title {
+        font-size: 35px;
+
+    &:hover{
+        color: map-get($palette , color3);
+    }
+        }
+    
+    .daft-years {
+        font-size: 25px;
+
+    &:hover {
+        color: map-get($palette , color3);
+    }
+        }
+    
+    .daft-index {
+        font-size: 20px;
+    &:hover {
+        color: map-get($palette , color3);
+    }
+    }
+
+}
+
+/* Fin Css grid Inicio Sass*/
+
+
+
+/* Index Final Sass*/
+
+
+
+
+
+/* Inicio discos Sass*/
+
+.fondo-discos{
+    background-image: url(./img/party-fondo.jpg);
+    background-size: cover
+}
+
+.discovery {
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.alive2007 {
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+    
+}
+
+.ram {
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.discos-df img{
+    height: 250px;
+    box-shadow: 0 0 10px 0 map-get($palette , color1);
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    &:hover {
+        @include animate;
+        box-shadow: 0 0 15px 0 map-get($palette , color2);
+    }
+}
+
+
+.txt-discos{
+    text-align: center;
+    color: map-get($palette , color5);
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px map-get($palette , color2);
+
+    &:hover {
+        text-shadow: 3px 3px map-get($palette , color1);
+    }
+}
+
+
+/* Fin discos  Sass*/
+
+
+
+
+/* Inicio Integrantes Sass*/
+
+.Integrantes{
+    display: block;
+
+    h1 {
+        @include titles;
+        font-size: 40px;
+    }
+
+    & img {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 500em;
+        border: 7px solid map-get($palette , color5);
+        box-shadow: 0 0 10px 0 map-get($palette , color1);
+        
+        &:hover {
+            transform: scale(1.1);
+            transition: 0.7s;
+            box-shadow: 0 0 15px 0 map-get($palette , color2);
+        }
+        
+    }
+}
+
+.txt-band2{
+    @include titles;
+    margin-top: 10px;
+    font-size: 40px;
+    text-shadow: 3px 3px map-get($palette , color6);
+
+    &:hover {
+        text-shadow: 3px 3px map-get($palette , color1);
+    }
+}
+
+
+.txt-names {
+    @include titles;
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.txt-names2 {
+    @include titles;
+    font-size: 20px;
+}
+
+.txt-names, .txt-names2{
+    &:hover 
+    {color: map-get($palette , color1);}
+}
+
+.txt-int1, .txt-int2 {
+    @include titles;
+    margin-top: 20px;
+    font-weight: bolder;
+}
+
+.guy1, .thomas1 {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.guy2, .thomas2 {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 25px;
+} 
+
+/* Fin Integrantes Sass*/
+
+
+
+/* Inicio Historia Sass*/
+
+
+
+/* Css grid Historia Sass*/
+
+.guytomas img{
+    height: 350px;
+    border: 8px solid white;
+}
+
+.featurette-heading{
+    color: white;
+}
+
+.lead, .lead2 {
+    color: white;
+    font-size: 18px;
+}
+
+/* Css grid Historia Sass*/
+
+
+
+/* Inicio Galeria Grids historia Sass*/
+
+.galeria {
+    min-height: 800px;
+    width: 100%;
+    display: grid;
+    padding: 20px;
+    gap: 10px;
+}
+
+.txt-historia {
+    @include titles;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px map-get($palette , color6);
+
+    &:hover {
+        text-shadow: 3px 3px map-get($palette , color1);
+    } 
+}
+
+.txt-galeria2 {
+    @include titles;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.img {
+    border: 2px solid map-get($palette , color5);
+    border-radius: 7px;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: all 0.7s;
+        filter: grayscale(95%);
+    }
+}
+
+.img-1 {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    background-image: url(img/galeria/1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.img-2 {
+    grid-column: 2/2;
+    grid-row: 1/2;
+    background-image: url(img/galeria/2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.img-3 {
+    grid-column: 3/5;
+    grid-row: 1/2;
+    background-image: url(img/galeria/3.webp);
+    background-position: center;
+    background-size: cover;
+}
+
+.img-4 {
+    grid-column: 2/3;
+    grid-row: 2/4;
+    background-image: url(img/galeria/4.webp);
+    background-position: center;
+    background-size: cover;
+}
+
+.img-5 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    background-image: url(img/galeria/5.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.img-6 {
+    grid-column: 4/5;
+    grid-row: 2/3;
+    background-image: url(img/galeria/6.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.img-7 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    background-image: url(img/galeria/7.webp);
+    background-position: center;
+    background-size: cover;
+}
+
+
+.img-8 {
+    grid-column: 3/5;
+    grid-row: 3/4;
+    background-image: url(img/galeria/8.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/* Fin Galeria Grids historia Sass*/
+
+
+
+/* Inicio Carrusel Videos */
+.txt-videos {
+    @include titles;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#carrusel3 {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 20px 0 map-get($palette , color1);
+    margin-bottom: 50px;
+
+    .carousel-item video{
+        height: 100%;
+        width: 100%;
+    }
+
+    .carousel-control-prev {
+        height: 80px;
+        width: 80px;
+        margin-left: 20px;
+        background-color: map-get($palette , color6);
+        box-shadow: 0 0 50px 0 cornflowerblue;
+    }
+
+
+    .carousel-control-next {
+        height: 80px;
+        width: 80px;
+        background-color: map-get($palette , color6);
+        margin-right: 20px;
+        box-shadow: 0 0 50px 0 cornflowerblue;
+    }
+
+}
+
+
+#carrusel3 .carousel-control-prev, .carousel-control-next {
+    margin-top: 350px;
+}
+
+
+.carousel-caption {
+    & h5
+    {font-size: xx-large;}
+}
+
+/* Fin Carrusel Videos Sass*/
+
+/* Fin Historia Sass*/
+
+
+
+
+
+/* Inicio Contacto */
+.contacto {
+    background-color:rgba(90, 89, 89, 0.799);
+    width: 80%;
+    margin: 50px auto;
+    border-radius: 10px;
+}
+
+.fondo-contacto{
+    background-image: url(./img/contact-fondo.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.heading {
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    border-bottom: 2px dotted white;
+}
+
+.sub-heading {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+.form-control {
+    margin: 10px 0px 0px 10px;
+}
+
+.btn {
+    background-color: red;
+    color: white;
+    width: 100%;
+    margin: 20px 20px 20px 10px;
+}
+
+.btn a:hover{
+    color: #2AD1B8;
+}
+
+.txt-follow {
+    color: white;
+    font-size: 30px;
+}
+
+.follow {
+    list-style: none;
+}
+
+.follow li{
+    display: inline-block;
+}
+
+.follow li a{
+    color: white;
+    margin-left: 15px;
+    font-size: 40px;
+}
+
+.follow li a:hover {
+    color: red;
+}
+
+
+.txt-listen {
+    color: white;
+    font-size: 30px;
+}
+.music {
+    list-style: none;
+}
+
+.music li{
+    display: inline-block;
+}
+
+.music li a{
+    color: white;
+    margin-left: 15px;
+    font-size: 40px;
+}
+
+.music li a:hover {
+    color: red;
+}
+
+.links-contact {
+    margin-top: 40px;
+}
+
+
+/* Fin Contacto Sass*/
+
+
+
+
+
+/* Inicio pie de pagina */
+
+footer{
+    @include footer;
+}
+
+.txt-sin{
+    margin: 20px;
+    color: map-get($palette , color5);
+
+    &:hover {
+        color: none;
+    }
+}
+.txt-fdo{
+    @extend .txt-sin;
+    margin: 0px;
+    text-decoration: none;
+
+    &:hover {
+        color: map-get($palette , color1);
+        text-decoration: none;
+    }
+}
+
+.social {
+    @extend .nav-links;
+    margin-right: 15px;
+    margin: 0px 20px 0px 0px;
+    margin-left: 0px;
+}
+
+
+
+/* fin pie de pagina */
+
+
+
+
+
+/* Tamaño pantallas */
+
+@media screen and (min-width: 780px) and (max-width: 1920px)
+
+/* Tamaño Inicio 780x1920*/ 
+    {
+    .grid{
+        grid-template: 
+        'content1 content2'
+        'content3 content3';
+        gap: 20px;
+    }
+
+
+    .content1 video{
+        grid-area: content1;
+        box-shadow: 0 0 15px 0 map-get($palette , color1);
+        width: 100%;     
+
+    }
+    
+    
+    .content2 img{
+        grid-area: content2;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .content3 {
+        grid-area: content3;
+        color: map-get($palette , color5);
+        justify-items: center;
+    }
+
+/* Fin Tamaño Inicio 780x1920*/
+
+
+/* Inicio Tamaño Discos 780x1920*/
+
+
+
+    /* Fin Tamaño Discos 780x1920*/
+
+    /* Inicio historia 780x1920*/
+    .galeria {
+        min-height: 500px;
+        width: 100%;
+        padding: 10px;
+        gap: 5px;
+    }
+
+
+ 
+    /*Fin Historia 780x1920*/
+}
+
+@media screen and (min-width: 480px) and (max-width: 780px) 
+
+/* Inicio Index 480x780 */
+
+{
+
+    .grid{
+        grid-template: 
+        'content1 content2'
+        'content3 content3';
+        gap: 15px
+    }
+
+
+    .content1 video{
+        grid-area: content1;
+        box-shadow: 0 0 15px 0 map-get($palette , color1);
+        width: 100%;     
+    }
+    
+    .content2 img{
+        grid-area: content2;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .content3 {
+        grid-area: content3;
+        color: map-get($palette , color5);
+        justify-items: center;
+    }
+/* Fin Index 480x780 */
+
+/* Inicio Discos 480x780 */
+
+
+/* Fin Discos 480x780 */
+
+/* Inicio Integrantes 480x780 */
+
+
+
+/* Fin Integrantes 480x780 */
+
+
+
+
+
+/* Inicio Historia 480x780 */
+
+    .galeria {
+        min-height: 300px;
+        width: 100%;
+        padding: 50px;
+        gap: 5px;
+    }
+}
+
+/*Fin Historia 480x720 */
+
+
+
+
+@media screen and (max-width: 480px) {
+
+/* Inicio Index 480*/
+.grid{
+    grid-template: 
+    'content1 content2'
+    'content3 content3';
+    gap: 15px;
+}
+
+.content1 video{
+    grid-area: content1;
+    box-shadow: 0 0 15px 0 map-get($palette , color1);
+    width: 100%;     
+}
+
+
+.content2 img{
+    grid-area: content2;
+    width: 100%;
+    height: 100%;
+}
+
+.content3 {
+    grid-area: content3;
+    color: map-get($palette , color5);
+    justify-items: center;
+}
+/* Fin Index 480*/
+
+/*Incio Integrantes 480 */
+.txt-band2{
+    @include titles;
+    margin-top: 10px;
+    font-size: 20px;
+    text-shadow: 3px 3px map-get($palette , color6);
+
+    &:hover {
+        text-shadow: 3px 3px map-get($palette , color1);
+    }
+}
+
+
+
+/*Fin Integrantes 480 */
+
+/* Inicio Discos 480*/
+.discos-df img{
+    height: 50px;
+    box-shadow: 0 0 10px 0 map-get($palette , color1);
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    &:hover {
+        @include animate;
+        box-shadow: 0 0 15px 0 map-get($palette , color2);
+    }
+}
+
+/* Fins Discos 480*/
+
+
+
+/* Inicio Galeria Historia 480*/
+    .galeria {
+        padding: 10px;
+        gap: 2px;
+    }
+}
+/* Fin galeria Historia 480 */
+
+
+
+
+
+
+
+/* Fin Tamaño pantallas */
